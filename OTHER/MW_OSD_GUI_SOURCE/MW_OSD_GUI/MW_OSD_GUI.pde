@@ -92,7 +92,7 @@ int  glidescopePosition = 38;
 int  callSignPosition = 39;
 int  debugPosition = 40;
 
-int GPSstartlat = 430948610;
+int GPSstartlat =  430948610;
 int GPSstartlon = -718897060;
 
 int MSP_sendOrder =0;
@@ -1388,14 +1388,14 @@ void draw() {
         if (ClosePort) return;
         
         get_OSD_SENSORS();
- ///*
+
         if ((int(SimControlToggle.getValue())!=0)&&(Simtype==0)) {
 
           if (init_com==1)SendCommand(MSP_ATTITUDE);
           if (init_com==1)SendCommand(MSP_RC);
           if (init_com==1)SendCommand(MSP_STATUS);
 
-        MSP_sendOrder++;
+          MSP_sendOrder++;
         switch(MSP_sendOrder) {
         case 1:
           if (init_com==1)SendCommand(MSP_BOXNAMES);
@@ -1442,8 +1442,10 @@ void draw() {
           MSP_sendOrder=1;
         }
         PortWrite = !PortWrite; // toggle TX LED every other    
-      } 
-//*/
+        }     
+
+        process_mav_send(); //        if ((int(SimControlToggle.getValue())!=0)&&(Simtype==2)) {
+
       }
     } // End !FontMode
   }
