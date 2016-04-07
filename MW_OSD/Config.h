@@ -43,7 +43,7 @@
 //#define CLEANFLIGHT172            // Uncomment this if you are using CLEANFLIGHT versions up to and including 1.7.2
 //#define CLEANFLIGHT180            // Uncomment this if you are using CLEANFLIGHT versions 1.8.0 & 1.8.1 
 
-//#define APM                       // Uncomment this if you are using APM compatible FC (Under development only)
+#define APM                       // Uncomment this if you are using APM compatible FC (Under development only)
 
 /********************       AIRCRAFT/INSTALLATION TYPE settings      *********************/
 //Choose ONLY ONE option:
