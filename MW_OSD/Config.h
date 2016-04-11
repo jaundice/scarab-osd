@@ -132,7 +132,7 @@
 //#define INTRO_VERSION               "MWOSD - DEV 1.6.0.0" // Call the OSD something else if you prefer. KVOSD is not permitted - LOL. 
 //#define INTRO_CALLSIGN            // Enable to display callsign at startup
 //#define INTRO_TIMEZONE            // Enable to display timezone at startup - if GPS TIME is enabled
-//#define INTRO_DELAY 5             // Seconds intro screen should show for. Default is 8 
+#define INTRO_DELAY 1             // Seconds intro screen should show for. Default is 8 
 #define INTRO_MENU                  // Enable to display TX stick MENU 
 //#define STARTUPDELAY 2000         // Enable alternative startup delay (in ms) to allow MAX chip voltage to rise fully and initialise before configuring 
 

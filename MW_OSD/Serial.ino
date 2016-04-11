@@ -17,6 +17,10 @@ static uint8_t rcvChecksum;
 static uint8_t readIndex;
 uint8_t txChecksum;
 
+#if defined MAVLINK
+  #include "MAVLINK.h"
+#endif  
+
 uint32_t read32() {
   uint32_t t = read16();
   t |= (uint32_t)read16()<<16;
@@ -791,6 +795,7 @@ void serialMenuCommon()
         }
 }
 
+
 void serialMSPreceive(uint8_t loops)
 {
   uint8_t c;
@@ -821,7 +826,7 @@ void serialMSPreceive(uint8_t loops)
     #endif //GPSOSD   
 
     #if defined (MAVLINK)
-       MAVLINK_NewData(c);
+       serialMAVreceive(c);
     #endif //MAVLINK   
 
     if (c_state == IDLE)
@@ -1008,4 +1013,5 @@ void setFCProfile()
   setMspRequests();
   delay(100);
 }
+
 
